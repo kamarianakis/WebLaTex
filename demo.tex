@@ -3,6 +3,7 @@
 \documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
 
 \usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\usepackage{tikz} % This package allows you to create graphs and diagrams
 
 \title{Simple Sample} % Sets article title
 \author{My Name} % Sets authors name
@@ -25,5 +26,51 @@ Also notice how even though I hit enter after that sentence and here $\downarrow
 \LaTeX{} formats the sentence without any break.  Also   look  how      it   doesn't     matter          how    many  spaces     I put     between       my    words.
 
 For a new essay I can leave a blank space in my code.
+
+is this ok ?
+
+Yes it is!
+
+But can it also create new paragraphs?
+
+Yes!  By leaving a blank line in the code I can create a new paragraph.
+
+So let's try it again.
+
+We now want to create a graph. I want a graph with 5 vertices, all connected to each other.  This is called a complete graph on 5 vertices, or $K_5$.
+Below is the code to create this graph using the tikz package.
+
+\begin{center} % centers the figure
+  \begin{tikzpicture} % begins the tikz environment
+    \node (A) at (0,0) [circle,draw] {A
+    };
+    \node (B) at (2,0) [circle,draw] {B
+    };
+    \node (C) at (1,1.5) [circle,draw] {C
+    };
+    \node (D) at (0,3) [circle,draw] {D
+    };
+    \node (E) at (2,3) [circle,draw] {E
+    };
+    \draw (A) -- (C);
+    \draw (A) -- (D);
+    \draw (A) -- (B);
+    \draw (B) -- (C);
+    \draw (B) -- (E);
+    \draw (C) -- (D);
+    \draw (C) -- (E);
+    \draw (D) -- (E);
+  \end{tikzpicture}
+\end{center} % ends centering
+
+
+\section{Lists} % creates another section
+I can also make lists:
+\begin{itemize} % creates an itemized list
+  \item First Item
+  \item Second Item
+  \item Third Item
+  \item  Fourth Item
+\end{itemize}
 
 \end{document} % This is the end of the document
